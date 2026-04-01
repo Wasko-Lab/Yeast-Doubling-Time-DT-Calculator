@@ -3,6 +3,7 @@
 Available at https://dt.wasko.org. 
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19343587.svg)](https://doi.org/10.5281/zenodo.19343587)
+
 ![React](https://img.shields.io/badge/React-19.2.0-blue?style=for-the-badge&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-6.2.0-purple?style=for-the-badge&logo=vite)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
