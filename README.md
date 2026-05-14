@@ -1,9 +1,5 @@
 # Yeast Doubling Time (DT) Calculator 🧫
 
-Available at https://dt.wasko.org. 
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19343587.svg)](https://doi.org/10.5281/zenodo.19343587)
-
 ![React](https://img.shields.io/badge/React-19.2.0-blue?style=for-the-badge&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-6.2.0-purple?style=for-the-badge&logo=vite)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
@@ -87,6 +83,22 @@ This method identifies the maximum growth rate (the steepest slope) achieved *wi
 - **Local Regression:** For each 4-point window, it performs a linear regression on the log-transformed OD values against time.
 - **Maximum Slope:** It identifies the window that produced the highest positive slope (the maximum growth rate).
 - **Calculation:** The doubling time is calculated using this maximum slope: `ln(2) / max_slope`.
+
+## 📈 Advanced Kinetic Parameters
+
+In addition to standard exponential doubling times, the app extracts advanced kinetic parameters using numerical integration and non-linear curve fitting:
+
+### Area Under the Curve (AUC)
+Calculated using the standard trapezoidal rule across all datapoints. AUC acts as a robust holistic metric of overall strain performance, incorporating both growth rate and carrying capacity over the entire time course.
+
+### Modified Gompertz Non-linear Fit
+The entire growth curve (OD vs time) is modeled against the Modified Gompertz Equation:
+`y(t) = y0 + A * exp(-exp((μ_max * e / A) * (λ - t) + 1))`
+
+This extracts essential biological parameters dynamically optimized via the Levenberg-Marquardt algorithm:
+- **Capacity (A):** The maximum baseline-subtracted optical density (carrying capacity).
+- **Maximum Specific Growth Rate (μ_max):** The maximum rate achieved during the exponential growth phase.
+- **Lag Phase Duration (λ):** The time delay before the onset of the exponential phase.
 
 ## Statistical Analysis
 

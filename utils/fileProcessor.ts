@@ -1,6 +1,6 @@
 
 import { WellData, ProcessingConfig, ODDataPoint } from '../types';
-import { calculateRegression, calculateMaxSlopeRegression, isValidWell, sortWells, normalizeWellLabel } from './mathUtils';
+import { calculateRegression, calculateMaxSlopeRegression, isValidWell, sortWells, normalizeWellLabel, fitGompertz, calculateAUC } from './mathUtils';
 import { read, utils } from 'xlsx';
 
 // Helper to parse layout grid
@@ -242,6 +242,10 @@ export const processFileContent = (
         }
     }
 
+    // New additions: Gompertz parameters and AUC
+    const gompertzFit = fitGompertz(dataPoints);
+    const auc = calculateAUC(dataPoints);
+
     results.push({
       label,
       name: nameMap.get(label), // Assign name
@@ -257,7 +261,12 @@ export const processFileContent = (
       lagTime,
       slope,
       rSquared,
-      isHighInitialOD
+      isHighInitialOD,
+      auc,
+      gompertz_y0: gompertzFit ? gompertzFit.y0 : null,
+      gompertz_A: gompertzFit ? gompertzFit.A : null,
+      gompertz_mu_max: gompertzFit ? gompertzFit.mu_max : null,
+      gompertz_lambda: gompertzFit ? gompertzFit.lambda_phase : null,
     });
   });
 

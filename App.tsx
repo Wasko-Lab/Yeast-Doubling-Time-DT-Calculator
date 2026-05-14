@@ -383,6 +383,12 @@ const App: React.FC = () => {
                     <p>
                         <strong>DT Inflection (Max Rate):</strong> Finds the steepest slope (fastest growth) within the OD limits using a sliding window. This represents the max doubling rate.
                     </p>
+                    <p>
+                        <strong>AUC (Area Under Curve):</strong> Calculated using the trapezoidal rule over the entire time course.
+                    </p>
+                    <p>
+                        <strong>Gompertz Model:</strong> Evaluates the Non-Linear Modified Gompertz equation to extract carrying capacity (A), max specific growth rate (μ_max), and lag phase duration (λ).
+                    </p>
                 </div>
             </div>
 

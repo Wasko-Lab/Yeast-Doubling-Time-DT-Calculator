@@ -21,6 +21,11 @@ export interface WellData {
   rSquared: number | null;
   slope: number | null;
   isHighInitialOD: boolean; // Flag if initial reading >= lowOD
+  auc?: number | null; // Trapezoidal Area Under Curve
+  gompertz_y0?: number | null;
+  gompertz_A?: number | null;
+  gompertz_mu_max?: number | null;
+  gompertz_lambda?: number | null;
 }
 
 export interface ProcessingConfig {

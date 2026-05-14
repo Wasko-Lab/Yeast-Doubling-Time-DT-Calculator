@@ -36,6 +36,11 @@ const ResultsTable: React.FC<Props> = ({
       'DT Inflection (min)', 
       'DT Global (min)', 
       'Lag Time (min)', 
+      'AUC',
+      'Gompertz y0',
+      'Gompertz A (Capacity)',
+      'Gompertz mu_max',
+      'Gompertz lag (lambda)',
       'Min OD', 
       'Max OD', 
       'Notes'
@@ -48,6 +53,11 @@ const ResultsTable: React.FC<Props> = ({
       w.doublingTimeInflection ? w.doublingTimeInflection.toFixed(4) : 'NaN',
       w.doublingTimeGlobal ? w.doublingTimeGlobal.toFixed(4) : 'NaN',
       w.lagTime !== null ? w.lagTime.toFixed(4) : 'NaN',
+      w.auc !== null && w.auc !== undefined ? w.auc.toFixed(4) : 'NaN',
+      w.gompertz_y0 !== null && w.gompertz_y0 !== undefined ? w.gompertz_y0.toFixed(4) : 'NaN',
+      w.gompertz_A !== null && w.gompertz_A !== undefined ? w.gompertz_A.toFixed(4) : 'NaN',
+      w.gompertz_mu_max !== null && w.gompertz_mu_max !== undefined ? w.gompertz_mu_max.toFixed(4) : 'NaN',
+      w.gompertz_lambda !== null && w.gompertz_lambda !== undefined ? w.gompertz_lambda.toFixed(4) : 'NaN',
       w.minOD.toFixed(4),
       w.maxOD.toFixed(4),
       w.isHighInitialOD ? 'Initial OD >= Low Limit' : ''
@@ -123,6 +133,10 @@ const ResultsTable: React.FC<Props> = ({
               <th className="px-4 py-3 text-science-700" title="Doubling Time at steepest slope within range">DT Inflection</th>
               <th className="px-4 py-3 text-pink-600" title="Doubling Time at steepest slope of entire curve">DT Global</th>
               <th className="px-4 py-3" title="Calculated Lag Time based on Global Inflection">Lag Time</th>
+              <th className="px-4 py-3 text-purple-600" title="Area Under the Curve (Trapezoidal)">AUC</th>
+              <th className="px-4 py-3 text-indigo-600" title="Gompertz Maximum Specific Growth Rate">μ_max</th>
+              <th className="px-4 py-3 text-indigo-600" title="Gompertz Lag Phase Duration">Lag (λ)</th>
+              <th className="px-4 py-3 text-indigo-600" title="Gompertz Carrying Capacity">Capacity (A)</th>
               <th className="px-4 py-3">Min OD</th>
               <th className="px-4 py-3">Max OD</th>
               <th className="px-4 py-3">Status</th>
@@ -177,6 +191,18 @@ const ResultsTable: React.FC<Props> = ({
                   </td>
                   <td className="px-4 py-3 font-mono text-slate-600">
                      {well.lagTime !== null ? well.lagTime.toFixed(1) : '-'}
+                  </td>
+                  <td className="px-4 py-3 font-mono text-purple-600 font-medium">
+                     {well.auc !== null && well.auc !== undefined ? well.auc.toFixed(2) : '-'}
+                  </td>
+                  <td className="px-4 py-3 font-mono text-indigo-600">
+                     {well.gompertz_mu_max !== null && well.gompertz_mu_max !== undefined ? well.gompertz_mu_max.toFixed(4) : '-'}
+                  </td>
+                  <td className="px-4 py-3 font-mono text-indigo-600">
+                     {well.gompertz_lambda !== null && well.gompertz_lambda !== undefined ? well.gompertz_lambda.toFixed(1) : '-'}
+                  </td>
+                  <td className="px-4 py-3 font-mono text-indigo-600">
+                     {well.gompertz_A !== null && well.gompertz_A !== undefined ? well.gompertz_A.toFixed(3) : '-'}
                   </td>
                    <td className="px-4 py-3 font-mono text-slate-500">
                      {well.minOD.toFixed(3)}
