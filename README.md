@@ -6,7 +6,7 @@ Available to use at https://dt.wasko.org
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-A specialized, web-based bioinformatics tool for calculating yeast doubling times from Biotech Epoch2 (or other) plate reader data. This application provides a user-friendly graphical interface for growth kinetics analysis from yeast (OD vs time).
+A specialized, web-based bioinformatics tool for calculating yeast doubling times from Biotech Epoch2 (or other) 96-well plate reader data. This application provides a user-friendly graphical interface for growth kinetics analysis from yeast (OD vs time).
 
 ## Features
 
