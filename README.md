@@ -1,12 +1,12 @@
 # Yeast Doubling Time (DT) Calculator 🧫
-available https://dt.wasko.org
+Available to use at https://dt.wasko.org
 
 ![React](https://img.shields.io/badge/React-19.2.0-blue?style=for-the-badge&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-6.2.0-purple?style=for-the-badge&logo=vite)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-A specialized, web-based bioinformatics tool for calculating yeast doubling times from Biotech Epoch2 plate reader data. This application provides a user-friendly graphical interface for growth kinetics analysis from yeast (OD vs time).
+A specialized, web-based bioinformatics tool for calculating yeast doubling times from Biotech Epoch2 (or other) plate reader data. This application provides a user-friendly graphical interface for growth kinetics analysis from yeast (OD vs time).
 
 ## Features
 
